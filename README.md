@@ -2,37 +2,24 @@
 
 ---
 
+## Установка
+
+```bash
+chmod +x install.sh && ./install.sh
+```
+
+---
+
 ## Команды
 
-### `update` - полное обновление системы
-
-**Зависимости**
+### `update` — полное обновление системы
 
 ```bash
-sudo pacman -S --needed reflector pacman-contrib
+update
 ```
 
-**Установка скрипта**
+### `save.sh` — сохранить конфиги в репозиторий
 
 ```bash
-sudo cp update.sh /usr/local/bin/update
-sudo chmod +x /usr/local/bin/update
-```
-
-**Права (sudoers)**
-
-```bash
-sudo EDITOR=nano visudo
-```
-
-Добавить рядом с `root`:
-
-```
-kleshzz ALL=(ALL) NOPASSWD: /usr/bin/pacman, /usr/bin/paccache
-```
-
-**zsh**
-
-```bash
-alias update='/usr/local/bin/update' && source ~/.zshrc
+./save.sh
 ```
