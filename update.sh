@@ -11,11 +11,17 @@ fi
 
 sudo paccache -rk2
 
+sudo pacman -Sc --noconfirm
+
+sudo journalctl --vacuum-time=2weeks
+
+sudo fstrim -av
+
 orphans=$(pacman -Qdtq 2>/dev/null || true)
 if [ -n "$orphans" ]; then
     echo "$orphans" | sudo pacman -Rns - --noconfirm
 else
-    echo "Not found!"
+    echo "Unused weren't found!"
 fi
 
 if [ -d "$HOME/.oh-my-zsh" ]; then
