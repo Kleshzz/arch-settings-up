@@ -1,5 +1,16 @@
 {
-    "editor.minimap.enabled": false,
-    "files.autoSave": "afterDelay",
-    "files.autoSaveDelay": 100
+    "editor.minimap.enabled": false, // удаление минимапы справа
+    "files.autoSave": "afterDelay", // автосохранение
+    "files.autoSaveDelay": 100, // время в мс для автосохранения
+    "editor.fontSize": 14,  // размер шрифта
+    "editor.cursorBlinking": "smooth", // плавное мигание курсора
+    "editor.cursorSmoothCaretAnimation": "on", // плавное движение курсора
+    "editor.smoothScrolling": true, // плавный скролл
+    "workbench.tree.indent": 16, // отступы в файловом дереве
+    "editor.formatOnSave": true, // форматирование при сохранении
+    "git.autofetch": true, // автоматически делает git fetch в фоне
+    "explorer.confirmDelete": false, // удаляет файлы без подтверждения
+    "explorer.confirmDragAndDrop": false, // перемещает файлы без подтверждения
+    "security.workspace.trust.enabled": false, // убирает баннер доверия при открытии папок
+    "workbench.editor.enablePreview": false // файлы открываются постоянно а не в превью
 }
