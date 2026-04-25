@@ -24,6 +24,7 @@ copy "$HOME"               "$DOTFILES/zsh"                    ".zshrc"
 copy "$HOME/.config/kitty" "$DOTFILES/kitty/.config/kitty"   "kitty.conf"
 copy "$HOME/.config/rofi"  "$DOTFILES/rofi/.config/rofi"     "config.rasi"
 copy "$HOME/.config/hypr"  "$DOTFILES/hyprland/.config/hypr" "hyprland.conf"
+copy "$HOME/.config/hypr"  "$DOTFILES/hyprland/.config/hypr" "hyprlock.conf"
 
 # Зависимости для update
 sudo pacman -S --needed --noconfirm pacman-contrib
