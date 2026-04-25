@@ -1,25 +1,27 @@
 #!/bin/bash
 set -e
 
+if [ "$EUID" -eq 0 ]; then
+    echo "Need no root!"
+    exit 1
+fi
+
 DOTFILES="$(cd "$(dirname "$0")" && pwd)/dotfiles"
 
-# zsh
-cp "$DOTFILES/zsh/.zshrc" ~/.zshrc
-echo "Done zshrc!"
+backup() {
+    [ -f "$1" ] && cp "$1" "$1.bak.$(date +%Y%m%d_%H%M%S)"
+}
 
-# kitty
-mkdir -p ~/.config/kitty
-cp "$DOTFILES/kitty/.config/kitty/kitty.conf" ~/.config/kitty/kitty.conf
-echo "Done kitty.conf!"
+copy() {
+    mkdir -p "$1"
+    backup "$1/$3"
+    cp "$2/$3" "$1/$3"
+    echo "Done $3"
+}
 
-# rofi
-mkdir -p ~/.config/rofi
-cp "$DOTFILES/rofi/.config/rofi/config.rasi" ~/.config/rofi/config.rasi
-echo "Done rofi - config.rasi!"
-
-# hyprland
-mkdir -p ~/.config/hypr
-cp "$DOTFILES/hyprland/.config/hypr/hyprland.conf" ~/.config/hypr/hyprland.conf
-echo "Done hyprland.conf!"
+copy "$HOME"               "$DOTFILES/zsh"                    ".zshrc"
+copy "$HOME/.config/kitty" "$DOTFILES/kitty/.config/kitty"   "kitty.conf"
+copy "$HOME/.config/rofi"  "$DOTFILES/rofi/.config/rofi"     "config.rasi"
+copy "$HOME/.config/hypr"  "$DOTFILES/hyprland/.config/hypr" "hyprland.conf"
 
 echo "All done!"
