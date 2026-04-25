@@ -2,18 +2,17 @@
 set -e
 
 if command -v yay &>/dev/null; then
-    yay -Syu --noconfirm
+    yay -Syu --noconfirm --removemake
 elif command -v paru &>/dev/null; then
-    paru -Syu --noconfirm
+    paru -Syu --noconfirm --removemake
 else
     sudo pacman -Syu --noconfirm
 fi
 
 sudo paccache -rk2
+sudo paccache -ruk0
 
-sudo pacman -Sc --noconfirm
-
-sudo journalctl --vacuum-time=2weeks
+sudo journalctl --vacuum-time=2weeks --vacuum-size=500M
 
 sudo fstrim -av
 
