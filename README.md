@@ -1,30 +1,38 @@
-## My arch settings and instructions
+# Arch-Set-UP
 
-# Comands:
+---
 
-- Update запускает обновление системы:
-### Зависимости
+## Команды
+
+### `update` - полное обновление системы
+
+**Зависимости**
 
 ```bash
-sudo pacman -S --needed nano pacman-contrib
+sudo pacman -S --needed reflector pacman-contrib
 ```
 
-### Копирование в систему
+**Установка скрипта**
 
 ```bash
 sudo cp update.sh /usr/local/bin/update
 sudo chmod +x /usr/local/bin/update
 ```
 
-### Права - sudoers
+**Права (sudoers)**
 
 ```bash
 sudo EDITOR=nano visudo
 ```
-И РЯДОМ С ROOT СТАВИМ:
 
+Добавить рядом с `root`:
+
+```
 kleshzz ALL=(ALL) NOPASSWD: /usr/bin/pacman, /usr/bin/paccache
+```
 
-### В терминале (zsh)
+**zsh**
 
+```bash
 alias update='/usr/local/bin/update' && source ~/.zshrc
+```
