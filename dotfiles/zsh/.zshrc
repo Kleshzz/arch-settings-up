@@ -16,8 +16,8 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # История
-HISTSIZE=30
-SAVEHIST=30
+HISTSIZE=10000
+SAVEHIST=10000
 HISTFILE=~/.zsh_history
 setopt HIST_IGNORE_DUPS
 setopt SHARE_HISTORY
@@ -30,6 +30,9 @@ alias q='exit'
 # Файловые алиасы
 alias ls='ls --color=auto'
 alias la='ls -a'
+alias ..='cd ..'
+alias grep='grep --color=auto'
+alias vim='nvim'
 
 # Powerlevel10k
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
