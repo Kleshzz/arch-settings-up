@@ -57,6 +57,8 @@ else
     echo "Skip zoxide (already installed)"
 fi
 
+mkdir -p "$HOME/Pictures/Screenshots"
+
 # Зависимости для update
 sudo pacman -S --needed --noconfirm pacman-contrib
 
