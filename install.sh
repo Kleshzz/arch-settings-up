@@ -33,6 +33,14 @@ install_file "$DOTFILES/.config/waybar/config.jsonc"    "$HOME/.config/waybar/co
 install_file "$DOTFILES/.config/waybar/style.css"       "$HOME/.config/waybar/style.css"
 install_file "$DOTFILES/.config/fastfetch/config.jsonc" "$HOME/.config/fastfetch/config.jsonc"
 
+# Курсоры
+if [ -d "$DOTFILES/.icons" ]; then
+    cp -rp "$DOTFILES/.icons" "$HOME/.icons"
+    echo "Done .icons"
+else
+    echo "Skip .icons (not found in dotfiles)"
+fi
+
 # Zsh плагины
 ZSH_CUSTOM="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}"
 
