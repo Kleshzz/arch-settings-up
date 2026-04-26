@@ -69,7 +69,7 @@ sudo chmod +x /usr/local/bin/fresh
 # Sudoers
 user="$(whoami)"
 sudoers_file="/etc/sudoers.d/update-${user}"
-sudoers_line="${user} ALL=(ALL) NOPASSWD: /usr/bin/pacman, /usr/bin/paccache"
+sudoers_line="${user} ALL=(ALL) NOPASSWD: /usr/bin/pacman, /usr/bin/paccache, /usr/bin/journalctl, /usr/bin/fstrim"
 sudo grep -qF "$sudoers_line" "$sudoers_file" 2>/dev/null || {
     echo "$sudoers_line" | sudo tee "$sudoers_file" > /dev/null
     sudo chmod 440 "$sudoers_file"
