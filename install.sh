@@ -13,25 +13,26 @@ backup() {
     [ -f "$1" ] && cp "$1" "$1.bkp"
 }
 
-copy() {
-    mkdir -p "$1"
-    backup "$1/$3"
-    cp "$2/$3" "$1/$3"
-    echo "Done $3"
+install_file() {
+    local src="$1"
+    local dst="$2"
+    mkdir -p "$(dirname "$dst")"
+    backup "$dst"
+    cp "$src" "$dst"
+    echo "Done $(basename "$dst")"
 }
 
-copy "$HOME"               "$DOTFILES/zsh"                   ".zshrc"
-copy "$HOME/.config/kitty" "$DOTFILES/kitty/.config/kitty"   "kitty.conf"
-copy "$HOME/.config/rofi"  "$DOTFILES/rofi/.config/rofi"     "config.rasi"
-copy "$HOME/.config/hypr"  "$DOTFILES/hyprland/.config/hypr" "hyprland.conf"
-copy "$HOME/.config/hypr"  "$DOTFILES/hyprland/.config/hypr" "hyprlock.conf"
-copy "$HOME/.config"       "$DOTFILES/gamemode/.config/"     "gamemode.ini"
-copy "$HOME/.config/dunst" "$DOTFILES/dunst/.config/dunst"   "dunstrc"
+install_file "$DOTFILES/.zshrc"                        "$HOME/.zshrc"
+install_file "$DOTFILES/.config/kitty/kitty.conf"      "$HOME/.config/kitty/kitty.conf"
+install_file "$DOTFILES/.config/rofi/config.rasi"      "$HOME/.config/rofi/config.rasi"
+install_file "$DOTFILES/.config/hypr/hyprland.conf"    "$HOME/.config/hypr/hyprland.conf"
+install_file "$DOTFILES/.config/hypr/hyprlock.conf"    "$HOME/.config/hypr/hyprlock.conf"
+install_file "$DOTFILES/.config/dunst/dunstrc"         "$HOME/.config/dunst/dunstrc"
+install_file "$DOTFILES/.config/gamemode/gamemode.ini" "$HOME/.config/gamemode/gamemode.ini"
 
 # Zsh плагины
 ZSH_CUSTOM="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}"
 
-# Zsh-autosuggestions
 if [ ! -d "$ZSH_CUSTOM/plugins/zsh-autosuggestions" ]; then
     git clone --depth=1 --single-branch \
         https://github.com/zsh-users/zsh-autosuggestions \
@@ -41,7 +42,6 @@ else
     echo "Skip zsh-autosuggestions (already installed)"
 fi
 
-# Zsh-syntax-highlighting
 if [ ! -d "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting" ]; then
     git clone --depth=1 --single-branch \
         https://github.com/zsh-users/zsh-syntax-highlighting \
@@ -51,7 +51,7 @@ else
     echo "Skip zsh-syntax-highlighting (already installed)"
 fi
 
-# Zoxide
+# Пакеты
 if ! command -v zoxide &>/dev/null; then
     sudo pacman -S --needed --noconfirm zoxide
     echo "Done zoxide"
@@ -59,7 +59,6 @@ else
     echo "Skip zoxide (already installed)"
 fi
 
-# Gamemode
 if ! command -v gamemoded &>/dev/null; then
     sudo pacman -S --needed --noconfirm gamemode lib32-gamemode
     echo "Done gamemode"
@@ -67,12 +66,19 @@ else
     echo "Skip gamemode (already installed)"
 fi
 
+if ! command -v dunst &>/dev/null; then
+    sudo pacman -S --needed --noconfirm dunst libnotify
+    echo "Done dunst"
+else
+    echo "Skip dunst (already installed)"
+fi
+
 mkdir -p "$HOME/Pictures/Screenshots"
 
-# Зависимости для update
+# Зависимости для fresh
 sudo pacman -S --needed --noconfirm pacman-contrib
 
-# Установка update
+# Установка fresh
 sudo cp "$REPO/fresh.sh" /usr/local/bin/fresh
 sudo chmod +x /usr/local/bin/fresh
 
@@ -87,8 +93,7 @@ sudo grep -qF "$sudoers_line" "$sudoers_file" 2>/dev/null || {
 
 # Алиас в .zshrc
 grep -q "alias fresh=" "$HOME/.zshrc" 2>/dev/null || \
-    echo "alias fresh='/usr/local/bin/update'" >> "$HOME/.zshrc"
+    echo "alias fresh='/usr/local/bin/fresh'" >> "$HOME/.zshrc"
 
-echo "Done update"
-
+echo "Done fresh"
 echo "All done!"

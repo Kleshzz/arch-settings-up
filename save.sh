@@ -9,17 +9,19 @@ fi
 DOTFILES="$(cd "$(dirname "$0")" && pwd)/dotfiles"
 
 save() {
-    mkdir -p "$2"
-    cp -p "$1/$3" "$2/$3"
-    echo "Done $3"
+    local src="$1"
+    local dst="$2"
+    mkdir -p "$(dirname "$dst")"
+    cp -p "$src" "$dst"
+    echo "Done $(basename "$dst")"
 }
 
-save "$HOME"               "$DOTFILES/zsh"                   ".zshrc"
-save "$HOME/.config/kitty" "$DOTFILES/kitty/.config/kitty"   "kitty.conf"
-save "$HOME/.config/rofi"  "$DOTFILES/rofi/.config/rofi"     "config.rasi"
-save "$HOME/.config/hypr"  "$DOTFILES/hyprland/.config/hypr" "hyprland.conf"
-save "$HOME/.config/hypr"  "$DOTFILES/hyprland/.config/hypr" "hyprlock.conf"
-save "$HOME/.config"       "$DOTFILES/gamemode/.config/"     "gamemode.ini"
-save "$HOME/.config/dunst" "$DOTFILES/dunst/.config/dunst"   "dunstrc"
+save "$HOME/.zshrc"                      "$DOTFILES/.zshrc"
+save "$HOME/.config/kitty/kitty.conf"    "$DOTFILES/.config/kitty/kitty.conf"
+save "$HOME/.config/rofi/config.rasi"    "$DOTFILES/.config/rofi/config.rasi"
+save "$HOME/.config/hypr/hyprland.conf"  "$DOTFILES/.config/hypr/hyprland.conf"
+save "$HOME/.config/hypr/hyprlock.conf"  "$DOTFILES/.config/hypr/hyprlock.conf"
+save "$HOME/.config/dunst/dunstrc"       "$DOTFILES/.config/dunst/dunstrc"
+save "$HOME/.config/gamemode/gamemode.ini" "$DOTFILES/.config/gamemode/gamemode.ini"
 
 echo "All done!"
