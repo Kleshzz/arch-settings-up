@@ -1,0 +1,91 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 32,
+    "margin-top": 8,
+    "margin-left": 16,
+    "margin-right": 16,
+    "spacing": 0,
+
+    "modules-left": [
+        "hyprland/workspaces",
+        "hyprland/window"
+    ],
+
+    "modules-center": [
+        "custom/media"
+    ],
+
+    "modules-right": [
+        "pulseaudio",
+        "memory",
+        "cpu",
+        "clock"
+    ],
+
+    "hyprland/workspaces": {
+        "format": "{name}",
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e-1",
+        "persistent-workspaces": {
+            "*": [1, 2, 3, 4, 5]
+        }
+    },
+
+    "hyprland/window": {
+        "max-length": 35,
+        "separate-outputs": true,
+        "rewrite": {
+            "(.+) — Mozilla Firefox": " $1",
+            "(.+) - Visual Studio Code": " $1",
+            "(.*)kitty(.*)": " Terminal",
+            "": ""
+        }
+    },
+
+    "custom/media": {
+        "format": "{icon}  {text}",
+        "format-icons": {
+            "Playing": "",
+            "Paused": ""
+        },
+        "return-type": "json",
+        "max-length": 45,
+        "exec": "playerctl -a metadata --format '{\"text\": \"{{artist}} — {{title}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F 2>/dev/null",
+        "on-click": "playerctl play-pause",
+        "on-scroll-up": "playerctl next",
+        "on-scroll-down": "playerctl previous",
+        "escape": true
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "󰝟",
+        "format-icons": {
+            "default": ["󰕿", "󰖀", "󰕾"]
+        },
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "on-scroll-up": "wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+",
+        "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-",
+        "tooltip": false
+    },
+
+    "memory": {
+        "format": "󰍛 {used:0.1f}G",
+        "tooltip": false,
+        "interval": 5
+    },
+
+    "cpu": {
+        "format": " {usage}%",
+        "tooltip": false,
+        "interval": 3
+    },
+
+    "clock": {
+        "format": "{:%H:%M}",
+        "format-alt": "{:%d.%m.%Y}",
+        "tooltip": false,
+        "on-click": "mode"
+    }
+}
