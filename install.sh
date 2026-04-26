@@ -20,11 +20,12 @@ copy() {
     echo "Done $3"
 }
 
-copy "$HOME"               "$DOTFILES/zsh"                    ".zshrc"
+copy "$HOME"               "$DOTFILES/zsh"                   ".zshrc"
 copy "$HOME/.config/kitty" "$DOTFILES/kitty/.config/kitty"   "kitty.conf"
 copy "$HOME/.config/rofi"  "$DOTFILES/rofi/.config/rofi"     "config.rasi"
 copy "$HOME/.config/hypr"  "$DOTFILES/hyprland/.config/hypr" "hyprland.conf"
 copy "$HOME/.config/hypr"  "$DOTFILES/hyprland/.config/hypr" "hyprlock.conf"
+copy "$HOME/.config"       "$DOTFILES/gamemode/.config/"              "gamemode.ini"
 
 # Zsh плагины
 ZSH_CUSTOM="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}"
@@ -55,6 +56,14 @@ if ! command -v zoxide &>/dev/null; then
     echo "Done zoxide"
 else
     echo "Skip zoxide (already installed)"
+fi
+
+# Gamemode
+if ! command -v gamemoded &>/dev/null; then
+    sudo pacman -S --needed --noconfirm gamemode lib32-gamemode
+    echo "Done gamemode"
+else
+    echo "Skip gamemode (already installed)"
 fi
 
 mkdir -p "$HOME/Pictures/Screenshots"

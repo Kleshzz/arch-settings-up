@@ -1,5 +1,0 @@
-* text=auto eol=lf
-
-*.js text diff=shell
-*.conf text diff=rust
-*.json text diff=rust

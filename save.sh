@@ -14,10 +14,11 @@ save() {
     echo "Done $3"
 }
 
-save "$HOME"               "$DOTFILES/zsh"                    ".zshrc"
+save "$HOME"               "$DOTFILES/zsh"                   ".zshrc"
 save "$HOME/.config/kitty" "$DOTFILES/kitty/.config/kitty"   "kitty.conf"
 save "$HOME/.config/rofi"  "$DOTFILES/rofi/.config/rofi"     "config.rasi"
 save "$HOME/.config/hypr"  "$DOTFILES/hyprland/.config/hypr" "hyprland.conf"
 save "$HOME/.config/hypr"  "$DOTFILES/hyprland/.config/hypr" "hyprlock.conf"
+save "$HOME/.config"       "$DOTFILES/gamemode/.config/"              "gamemode.ini"
 
 echo "All done!"

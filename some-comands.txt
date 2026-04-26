@@ -1,2 +1,5 @@
 gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+
+dota2:
+gamemoderun %command% -novid -noassert -nojoy -nosteamcontroller -vulkan -language russian -high -freq 144 -input_button_code_is_scan_code
