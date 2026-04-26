@@ -28,10 +28,13 @@ install_file "$DOTFILES/.config/rofi/config.rasi"       "$HOME/.config/rofi/conf
 install_file "$DOTFILES/.config/hypr/hyprland.conf"     "$HOME/.config/hypr/hyprland.conf"
 install_file "$DOTFILES/.config/hypr/hyprlock.conf"     "$HOME/.config/hypr/hyprlock.conf"
 install_file "$DOTFILES/.config/dunst/dunstrc"          "$HOME/.config/dunst/dunstrc"
+install_file "$DOTFILES/.config/dunst/dunst-sound.sh"   "$HOME/.config/dunst/dunst-sound.sh"
 install_file "$DOTFILES/.config/gamemode.ini"           "$HOME/.config/gamemode.ini"
 install_file "$DOTFILES/.config/waybar/config.jsonc"    "$HOME/.config/waybar/config.jsonc"
 install_file "$DOTFILES/.config/waybar/style.css"       "$HOME/.config/waybar/style.css"
 install_file "$DOTFILES/.config/fastfetch/config.jsonc" "$HOME/.config/fastfetch/config.jsonc"
+
+chmod +x "$HOME/.config/dunst/dunst-sound.sh"
 
 # Курсоры
 if [ -d "$DOTFILES/.icons" ]; then
@@ -96,7 +99,7 @@ sudo chmod +x /usr/local/bin/fresh
 # Sudoers
 user="$(whoami)"
 sudoers_file="/etc/sudoers.d/update-${user}"
-sudoers_line="${user} ALL=(ALL) NOPASSWD: /usr/bin/pacman, /usr/bin/paccache, /usr/bin/journalctl, /usr/bin/fstrim"
+sudoers_line="${user} ALL=(ALL) NOPASSWD: /usr/bin/pacman, /usr/bin/paccache, /usr/bin/journalctl, /usr/bin/fstrim, /usr/bin/coredumpctl, /usr/bin/systemd-tmpfiles"
 sudo grep -qF "$sudoers_line" "$sudoers_file" 2>/dev/null || {
     echo "$sudoers_line" | sudo tee "$sudoers_file" > /dev/null
     sudo chmod 440 "$sudoers_file"

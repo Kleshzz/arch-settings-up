@@ -11,6 +11,9 @@
     scale = 0
     notification_limit = 5
 
+    ### Sound play   ###
+    script = "~/.config/dunst/dunst-sound.sh"
+
     ### Progress bar ###
     progress_bar = true
     progress_bar_height = 8
