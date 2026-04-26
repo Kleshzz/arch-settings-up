@@ -29,16 +29,20 @@ copy "$HOME/.config/hypr"  "$DOTFILES/hyprland/.config/hypr" "hyprlock.conf"
 # Zsh плагины
 ZSH_CUSTOM="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}"
 
+# Zsh-autosuggestions
 if [ ! -d "$ZSH_CUSTOM/plugins/zsh-autosuggestions" ]; then
-    git clone https://github.com/zsh-users/zsh-autosuggestions \
+    git clone --depth=1 --single-branch \
+        https://github.com/zsh-users/zsh-autosuggestions \
         "$ZSH_CUSTOM/plugins/zsh-autosuggestions"
     echo "Done zsh-autosuggestions"
 else
     echo "Skip zsh-autosuggestions (already installed)"
 fi
 
+# Zsh-syntax-highlighting
 if [ ! -d "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting" ]; then
-    git clone https://github.com/zsh-users/zsh-syntax-highlighting \
+    git clone --depth=1 --single-branch \
+        https://github.com/zsh-users/zsh-syntax-highlighting \
         "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting"
     echo "Done zsh-syntax-highlighting"
 else

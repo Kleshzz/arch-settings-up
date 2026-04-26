@@ -10,7 +10,7 @@ DOTFILES="$(cd "$(dirname "$0")" && pwd)/dotfiles"
 
 save() {
     mkdir -p "$2"
-    cp "$1/$3" "$2/$3"
+    cp -p "$1/$3" "$2/$3"
     echo "Done $3"
 }
 
