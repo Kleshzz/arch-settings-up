@@ -10,7 +10,7 @@ REPO="$(cd "$(dirname "$0")" && pwd)"
 DOTFILES="$REPO/dotfiles"
 
 backup() {
-    [ -f "$1" ] && cp "$1" "$1.bak.$(date +%Y%m%d_%H%M%S)"
+    [ -f "$1" ] && cp "$1" "$1.bkp"
 }
 
 copy() {
