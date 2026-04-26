@@ -27,6 +27,8 @@ setopt SHARE_HISTORY
 
 # Системные алиасы
 alias fresh='/usr/local/bin/fresh'
+alias freash='/usr/local/bin/fresh'
+alias frsh='/usr/local/bin/fresh'
 alias cls='clear'
 alias q='exit'
 
