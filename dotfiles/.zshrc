@@ -26,20 +26,37 @@ setopt HIST_IGNORE_DUPS
 setopt SHARE_HISTORY
 
 # Системные алиасы
+alias q='exit'
+alias neofetch='fastfetch'
+
+alias mem='free -h'
+alias memory='free -h'
+alias cpu='lscpu'
+
+alias systemctl='sudo systemctl'
+
+# Сетевые алиасы
+alias ports='ss -tulpn'
+alias ping='ping -c 5'
+
+# Файловые алиасы
+alias ls='ls --color=auto'
+alias la='ls -a'
+alias grep='grep --color=auto'
+alias ..='cd ..'
+alias vim='nvim'
+
+# Опечатки и тд
 alias fresh='/usr/local/bin/fresh'
 alias freash='/usr/local/bin/fresh'
 alias frsh='/usr/local/bin/fresh'
 alias update='/usr/local/bin/fresh'
 alias upd='/usr/local/bin/fresh'
-alias cls='clear'
-alias q='exit'
 
-# Файловые алиасы
-alias ls='ls --color=auto'
-alias la='ls -a'
-alias ..='cd ..'
-alias grep='grep --color=auto'
-alias vim='nvim'
+alias cls='clear'
+alias clr='clear'
+alias clera='clear'
+alias cleara='clear'
 
 # Powerlevel10k
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

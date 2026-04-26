@@ -25,5 +25,6 @@ save "$HOME/.config/dunst/dunstrc"       "$DOTFILES/.config/dunst/dunstrc"
 save "$HOME/.config/gamemode.ini"        "$DOTFILES/.config/gamemode.ini"
 save "$HOME/.config/waybar/config.jsonc" "$DOTFILES/.config/waybar/config.jsonc"
 save "$HOME/.config/waybar/style.css"    "$DOTFILES/.config/waybar/style.css"
+save "$HOME/.config/fastfetch/config.jsonc" "$DOTFILES/.config/fastfetch/config.jsonc"
 
 echo "All done!"

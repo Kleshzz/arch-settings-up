@@ -31,6 +31,7 @@ install_file "$DOTFILES/.config/dunst/dunstrc"          "$HOME/.config/dunst/dun
 install_file "$DOTFILES/.config/gamemode.ini"           "$HOME/.config/gamemode.ini"
 install_file "$DOTFILES/.config/waybar/config.jsonc"    "$HOME/.config/waybar/config.jsonc"
 install_file "$DOTFILES/.config/waybar/style.css"       "$HOME/.config/waybar/style.css"
+install_file "$DOTFILES/.config/fastfetch/config.jsonc" "$HOME/.config/fastfetch/config.jsonc"
 
 # Zsh плагины
 ZSH_CUSTOM="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}"
