@@ -22,6 +22,6 @@ save "$HOME/.config/rofi/config.rasi"    "$DOTFILES/.config/rofi/config.rasi"
 save "$HOME/.config/hypr/hyprland.conf"  "$DOTFILES/.config/hypr/hyprland.conf"
 save "$HOME/.config/hypr/hyprlock.conf"  "$DOTFILES/.config/hypr/hyprlock.conf"
 save "$HOME/.config/dunst/dunstrc"       "$DOTFILES/.config/dunst/dunstrc"
-save "$HOME/.config/gamemode/gamemode.ini" "$DOTFILES/.config/gamemode/gamemode.ini"
+save "$HOME/.config/gamemode.ini"        "$DOTFILES/gamemode.ini"
 
 echo "All done!"

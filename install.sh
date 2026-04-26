@@ -22,13 +22,13 @@ install_file() {
     echo "Done $(basename "$dst")"
 }
 
-install_file "$DOTFILES/.zshrc"                        "$HOME/.zshrc"
-install_file "$DOTFILES/.config/kitty/kitty.conf"      "$HOME/.config/kitty/kitty.conf"
-install_file "$DOTFILES/.config/rofi/config.rasi"      "$HOME/.config/rofi/config.rasi"
-install_file "$DOTFILES/.config/hypr/hyprland.conf"    "$HOME/.config/hypr/hyprland.conf"
-install_file "$DOTFILES/.config/hypr/hyprlock.conf"    "$HOME/.config/hypr/hyprlock.conf"
-install_file "$DOTFILES/.config/dunst/dunstrc"         "$HOME/.config/dunst/dunstrc"
-install_file "$DOTFILES/.config/gamemode/gamemode.ini" "$HOME/.config/gamemode/gamemode.ini"
+install_file "$DOTFILES/.zshrc"                         "$HOME/.zshrc"
+install_file "$DOTFILES/.config/kitty/kitty.conf"       "$HOME/.config/kitty/kitty.conf"
+install_file "$DOTFILES/.config/rofi/config.rasi"       "$HOME/.config/rofi/config.rasi"
+install_file "$DOTFILES/.config/hypr/hyprland.conf"     "$HOME/.config/hypr/hyprland.conf"
+install_file "$DOTFILES/.config/hypr/hyprlock.conf"     "$HOME/.config/hypr/hyprlock.conf"
+install_file "$DOTFILES/.config/dunst/dunstrc"          "$HOME/.config/dunst/dunstrc"
+install_file "$DOTFILES/gamemode.ini"                   "$HOME/.config/gamemode.ini"
 
 # Zsh плагины
 ZSH_CUSTOM="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}"
