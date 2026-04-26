@@ -12,5 +12,7 @@
     "explorer.confirmDelete": false, // удаляет файлы без подтверждения
     "explorer.confirmDragAndDrop": false, // перемещает файлы без подтверждения
     "security.workspace.trust.enabled": false, // убирает баннер доверия при открытии папок
-    "workbench.editor.enablePreview": false // файлы открываются постоянно а не в превью
+    "workbench.editor.enablePreview": false, // файлы открываются постоянно а не в превью
+    "editor.fontLigatures": true, // включить лигатуры
+    "editor.tabSize": 4 // размер таба
 }

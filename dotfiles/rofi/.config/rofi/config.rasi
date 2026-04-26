@@ -96,6 +96,6 @@ element selected.normal {
 }
 
 message {
-    background-color: red;
+    background-color: transparent;
     border: 0px solid;
 }
