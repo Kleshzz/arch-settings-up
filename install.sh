@@ -25,7 +25,8 @@ copy "$HOME/.config/kitty" "$DOTFILES/kitty/.config/kitty"   "kitty.conf"
 copy "$HOME/.config/rofi"  "$DOTFILES/rofi/.config/rofi"     "config.rasi"
 copy "$HOME/.config/hypr"  "$DOTFILES/hyprland/.config/hypr" "hyprland.conf"
 copy "$HOME/.config/hypr"  "$DOTFILES/hyprland/.config/hypr" "hyprlock.conf"
-copy "$HOME/.config"       "$DOTFILES/gamemode/.config/"              "gamemode.ini"
+copy "$HOME/.config"       "$DOTFILES/gamemode/.config/"     "gamemode.ini"
+copy "$HOME/.config/dunst" "$DOTFILES/dunst/.config/dunst"   "dunstrc"
 
 # Zsh плагины
 ZSH_CUSTOM="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}"

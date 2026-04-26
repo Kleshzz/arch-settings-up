@@ -19,6 +19,7 @@ save "$HOME/.config/kitty" "$DOTFILES/kitty/.config/kitty"   "kitty.conf"
 save "$HOME/.config/rofi"  "$DOTFILES/rofi/.config/rofi"     "config.rasi"
 save "$HOME/.config/hypr"  "$DOTFILES/hyprland/.config/hypr" "hyprland.conf"
 save "$HOME/.config/hypr"  "$DOTFILES/hyprland/.config/hypr" "hyprlock.conf"
-save "$HOME/.config"       "$DOTFILES/gamemode/.config/"              "gamemode.ini"
+save "$HOME/.config"       "$DOTFILES/gamemode/.config/"     "gamemode.ini"
+save "$HOME/.config/dunst" "$DOTFILES/dunst/.config/dunst"   "dunstrc"
 
 echo "All done!"
