@@ -2,24 +2,25 @@
     font: "JetBrainsMono Nerd Font 13";
     g-spacing: 10px;
     g-margin: 0;
-    b-color: #000000FF;
-    fg-color: #FFFFFFFF;
-    fgp-color: #888888FF;
+    b-color: #cba6f7FF;
+    fg-color: #cdd6f4FF;
+    fgp-color: #585b70FF;
     b-radius: 8px;
     g-padding: 8px;
-    hl-color: #FFFFFFFF;
-    hlt-color: #000000FF;
-    alt-color: #111111FF;
-    wbg-color: #000000CC;
+    hl-color: #cba6f7FF;
+    hlt-color: #1e1e2eFF;
+    alt-color: #313244FF;
+    wbg-color: #1e1e2eF0;
     w-border: 2px solid;
-    w-border-color: #FFFFFFFF;
+    w-border-color: #cba6f7FF;
     w-padding: 12px;
 }
 
 configuration {
     modi: "drun";
     show-icons: true;
-    display-drun: "";
+    display-drun: "";
+    drun-display-format: "{name}";
 }
 
 listview {
@@ -81,7 +82,7 @@ element normal.normal {
 }
 
 element alternate.normal {
-	background-color: @alt-color;
+	background-color: transparent;
 	text-color: @fg-color;
 }
 
