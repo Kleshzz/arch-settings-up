@@ -33,7 +33,14 @@ alias mem='free -h'
 alias memory='free -h'
 alias cpu='lscpu'
 
-alias systemctl='sudo systemctl'
+# Умный systemctl: --user флаг — без sudo, остальное — с sudo
+systemctl() {
+  if [[ "$*" == *"--user"* ]]; then
+    command systemctl "$@"
+  else
+    sudo systemctl "$@"
+  fi
+}
 
 # Сетевые алиасы
 alias ports='ss -tulpn'
