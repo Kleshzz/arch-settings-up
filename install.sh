@@ -61,8 +61,8 @@ fi
 sudo pacman -S --needed --noconfirm pacman-contrib
 
 # Установка update
-sudo cp "$REPO/update.sh" /usr/local/bin/update
-sudo chmod +x /usr/local/bin/update
+sudo cp "$REPO/fresh.sh" /usr/local/bin/fresh
+sudo chmod +x /usr/local/bin/fresh
 
 # Sudoers
 user="$(whoami)"
@@ -74,8 +74,8 @@ sudo grep -qF "$sudoers_line" "$sudoers_file" 2>/dev/null || {
 }
 
 # Алиас в .zshrc
-grep -q "alias update=" "$HOME/.zshrc" 2>/dev/null || \
-    echo "alias update='/usr/local/bin/update'" >> "$HOME/.zshrc"
+grep -q "alias fresh=" "$HOME/.zshrc" 2>/dev/null || \
+    echo "alias fresh='/usr/local/bin/update'" >> "$HOME/.zshrc"
 
 echo "Done update"
 

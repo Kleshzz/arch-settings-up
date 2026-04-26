@@ -16,6 +16,12 @@ sudo journalctl --vacuum-time=2weeks --vacuum-size=500M
 
 sudo fstrim -av
 
+if [ -d "$HOME/.local/share/Trash" ]; then
+    rm -rf "$HOME/.local/share/Trash/files/"*
+    rm -rf "$HOME/.local/share/Trash/info/"*
+    echo "Trash cleared"
+fi
+
 orphans=$(pacman -Qdtq 2>/dev/null || true)
 if [ -n "$orphans" ]; then
     echo "$orphans" | sudo pacman -Rns --noconfirm -

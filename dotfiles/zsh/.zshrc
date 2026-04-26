@@ -26,7 +26,7 @@ setopt HIST_IGNORE_DUPS
 setopt SHARE_HISTORY
 
 # Системные алиасы
-alias update='/usr/local/bin/update'
+alias fresh='/usr/local/bin/fresh'
 alias cls='clear'
 alias q='exit'
 
