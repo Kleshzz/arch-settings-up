@@ -52,10 +52,6 @@ freed_kb=$((free_after - free_before))
 freed_mb=$((freed_kb / 1024))
 free_human=$(df -h /home | awk 'NR==2{print $4}')
 
-if command -v paplay &>/dev/null; then
-    paplay /usr/share/sounds/freedesktop/stereo/complete.oga 2>/dev/null || true
-fi
-
 if command -v notify-send &>/dev/null; then
     notify-send "🧹 Fresh done" "Freed: ${freed_mb}MB\nFree space: ${free_human}" --urgency=low
 fi
