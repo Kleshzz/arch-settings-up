@@ -29,6 +29,8 @@ setopt SHARE_HISTORY
 alias fresh='/usr/local/bin/fresh'
 alias freash='/usr/local/bin/fresh'
 alias frsh='/usr/local/bin/fresh'
+alias update='/usr/local/bin/fresh'
+alias upd='/usr/local/bin/fresh'
 alias cls='clear'
 alias q='exit'
 
