@@ -11,6 +11,9 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Плагины
 plugins=(
   git
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+  zoxide
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -36,3 +39,4 @@ alias vim='nvim'
 
 # Powerlevel10k
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+eval "$(zoxide init zsh)"

@@ -26,6 +26,33 @@ copy "$HOME/.config/rofi"  "$DOTFILES/rofi/.config/rofi"     "config.rasi"
 copy "$HOME/.config/hypr"  "$DOTFILES/hyprland/.config/hypr" "hyprland.conf"
 copy "$HOME/.config/hypr"  "$DOTFILES/hyprland/.config/hypr" "hyprlock.conf"
 
+# Zsh плагины
+ZSH_CUSTOM="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}"
+
+if [ ! -d "$ZSH_CUSTOM/plugins/zsh-autosuggestions" ]; then
+    git clone https://github.com/zsh-users/zsh-autosuggestions \
+        "$ZSH_CUSTOM/plugins/zsh-autosuggestions"
+    echo "Done zsh-autosuggestions"
+else
+    echo "Skip zsh-autosuggestions (already installed)"
+fi
+
+if [ ! -d "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting" ]; then
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting \
+        "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting"
+    echo "Done zsh-syntax-highlighting"
+else
+    echo "Skip zsh-syntax-highlighting (already installed)"
+fi
+
+# Zoxide
+if ! command -v zoxide &>/dev/null; then
+    sudo pacman -S --needed --noconfirm zoxide
+    echo "Done zoxide"
+else
+    echo "Skip zoxide (already installed)"
+fi
+
 # Зависимости для update
 sudo pacman -S --needed --noconfirm pacman-contrib
 
