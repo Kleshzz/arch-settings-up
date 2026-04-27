@@ -83,9 +83,10 @@
     },
 
     "clock": {
-        "format": "{:%H:%M}",
+        "format": "{:%H:%M:%S}",
         "format-alt": "{:%d.%m.%Y}",
         "tooltip": false,
-        "on-click": "mode"
+        "on-click": "mode",
+        "interval": 1
     }
 }
