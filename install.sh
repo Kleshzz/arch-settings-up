@@ -11,7 +11,9 @@ REPO="$(cd "$(dirname "$0")" && pwd)"
 DOTFILES="$REPO/dotfiles"
 
 backup() {
-    [ -f "$1" ] && cp "$1" "$1.bkp"
+    if [ -f "$1" ]; then
+        cp "$1" "$1.bkp"
+    fi
 }
 
 install_file() {
