@@ -59,11 +59,15 @@ alias freash='/usr/local/bin/fresh'
 alias frsh='/usr/local/bin/fresh'
 alias update='/usr/local/bin/fresh'
 alias upd='/usr/local/bin/fresh'
+alias FRESH='/usr/local/bin/fresh'
+alias UPDATE='/usr/local/bin/fresh'
+alias UPD='/usr/local/bin/fresh'
 
 alias cls='clear'
 alias clr='clear'
 alias clera='clear'
 alias cleara='clear'
+alias CLEAR='clear'
 
 # Powerlevel10k
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
