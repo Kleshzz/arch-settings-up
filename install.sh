@@ -1,5 +1,6 @@
 #!/bin/bash
 set -e
+trap 'echo "ERROR on line $LINENO"' ERR
 
 if [ "$EUID" -eq 0 ]; then
     echo "Need no root!"

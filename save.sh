@@ -29,6 +29,7 @@ save "$HOME/.config/waybar/style.css"       "$DOTFILES/.config/waybar/style.css"
 save "$HOME/.config/fastfetch/config.jsonc" "$DOTFILES/.config/fastfetch/config.jsonc"
 
 # Курсоры
+[ -d "$HOME/.icons" ]
 cp -rp "$HOME/.icons" "$DOTFILES/.icons"
 echo "Done .icons"
 
