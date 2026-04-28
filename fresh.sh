@@ -1,12 +1,12 @@
 #!/bin/bash
 set -e
 
-free_before=$(df /home | awk 'NR==2{print $4}')
-
 if command -v yay &>/dev/null; then
     yay -Syu --noconfirm --removemake --combinedupgrade --batchinstall
+    yay -Sc --noconfirm 2>/dev/null || true
 elif command -v paru &>/dev/null; then
     paru -Syu --noconfirm --removemake --combinedupgrade --batchinstall
+    paru -Sc --noconfirm 2>/dev/null || true
 else
     sudo pacman -Syu --noconfirm
 fi
@@ -14,9 +14,10 @@ fi
 sudo paccache -rk2
 sudo paccache -ruk0
 
+sudo journalctl --rotate 2>/dev/null || true
 sudo journalctl --vacuum-time=2weeks --vacuum-size=500M
 
-sudo fstrim -av
+sudo fstrim -av --quiet-unsupported
 
 find "$HOME/.cache" -type f -atime +30 -delete 2>/dev/null || true
 echo "Old cache cleared"
@@ -47,16 +48,12 @@ if [ -d "$HOME/.oh-my-zsh" ]; then
     ZSH="$HOME/.oh-my-zsh" zsh -c 'source $ZSH/oh-my-zsh.sh && omz update --unattended' 2>/dev/null || true
 fi
 
-free_after=$(df /home | awk 'NR==2{print $4}')
-freed_kb=$((free_after - free_before))
-freed_mb=$((freed_kb / 1024))
 free_human=$(df -h /home | awk 'NR==2{print $4}')
 
 if command -v notify-send &>/dev/null; then
-    notify-send "🧹 Fresh done" "Freed: ${freed_mb}MB\nFree space: ${free_human}" --urgency=low
+    notify-send "🧹 Fresh done" "Free space: ${free_human}" --urgency=low
 fi
 
 echo ""
-echo "Freed:      ${freed_mb}MB"
 echo "Free space: ${free_human}"
 echo "All done!"
