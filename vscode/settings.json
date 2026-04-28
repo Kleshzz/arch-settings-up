@@ -1,18 +1,45 @@
 {
-    "editor.minimap.enabled": false, // удаление минимапы справа
-    "files.autoSave": "afterDelay", // автосохранение
-    "files.autoSaveDelay": 100, // время в мс для автосохранения
-    "editor.fontSize": 14,  // размер шрифта
-    "editor.cursorBlinking": "smooth", // плавное мигание курсора
-    "editor.cursorSmoothCaretAnimation": "on", // плавное движение курсора
-    "editor.smoothScrolling": true, // плавный скролл
-    "workbench.tree.indent": 16, // отступы в файловом дереве
-    "editor.formatOnSave": true, // форматирование при сохранении
-    "git.autofetch": true, // автоматически делает git fetch в фоне
-    "explorer.confirmDelete": false, // удаляет файлы без подтверждения
-    "explorer.confirmDragAndDrop": false, // перемещает файлы без подтверждения
-    "security.workspace.trust.enabled": false, // убирает баннер доверия при открытии папок
-    "workbench.editor.enablePreview": false, // файлы открываются постоянно а не в превью
-    "editor.fontLigatures": true, // включить лигатуры
-    "editor.tabSize": 4 // размер таба
+    // Appearance & Font
+    "editor.fontFamily": "JetBrainsMono Nerd Font Mono",
+    "editor.fontWeight": "500",
+    "editor.fontLigatures": true,
+    "editor.fontSize": 14,
+    "workbench.colorTheme": "Catppuccin Mocha",
+
+    // Interface Elements
+    "editor.minimap.enabled": false,
+    "workbench.tree.indent": 16,
+    "workbench.tips.enabled": false,
+    "editor.showFoldingControls": "never",
+    "editor.lightbulb.enabled": "off",
+    "workbench.tree.renderIndentGuides": "none",
+    "editor.guides.indentation": false,
+
+    // Animation & Scrolling
+    "editor.cursorBlinking": "smooth",
+    "editor.cursorSmoothCaretAnimation": "on",
+    "editor.smoothScrolling": true,
+    "workbench.list.smoothScrolling": true,
+
+    // Files & Editor Behavior
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 100,
+    "editor.formatOnSave": true,
+    "editor.tabSize": 4,
+    "workbench.editor.enablePreview": false,
+
+    // Explorer & Security
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "security.workspace.trust.enabled": false,
+    "extensions.ignoreRecommendations": true,
+
+    // Telemetry & Privacy
+    "telemetry.telemetryLevel": "off",
+    "workbench.enableExperiments": false,
+    "npm.fetchOnlinePackageInfo": false,
+
+    // Git & Language Specific
+    "git.autofetch": true,
+    "python.languageServer": "Default"
 }

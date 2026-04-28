@@ -75,7 +75,7 @@ user_pref("gfx.content.skia-font-cache-size", 32);
 // user_pref("dom.ipc.processCount", 8); // firefox сам выбирает оптимал
 user_pref("browser.cache.memory.capacity", 262144); // 256MB под кеш в RAM
 user_pref("browser.cache.memory.max_entry_size", 51200); // макс 50MB на элемент
-user_pref("browser.sessionhistory.max_total_viewers", 3);
+user_pref("browser.sessionhistory.max_total_viewers", 3); // кол-во запоминаний страниц назад - вперед
 
 // Scrolling
 user_pref("apz.overscroll.enabled", true); // эффект "отскока" при прокрутке до края страницы

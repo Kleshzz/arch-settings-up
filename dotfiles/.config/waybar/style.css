@@ -29,7 +29,7 @@ window#waybar {
 }
 
 #workspaces button:hover {
-    background: rgba(49, 50, 68, 0.6);
+    background: transparent;
     color: #cdd6f4;
 }
 
@@ -41,16 +41,9 @@ window#waybar {
     color: #f38ba8;
 }
 
-/* ── Window title ── */
-#window {
-    padding: 0 10px;
-    color: #6c7086;
-    font-size: 12px;
-}
-
 /* ── Media ── */
 #custom-media {
-    padding: 0 14px;
+    padding: 0;
     color: #a6e3a1;
 }
 
@@ -58,10 +51,27 @@ window#waybar {
     color: #45475a;
 }
 
+#custom-prev,
+#custom-next {
+    padding: 0 12px;
+    color: #45475a;
+    font-size: 16px;
+}
+
+/* ── Power ── */
+
+#custom-power {
+    padding: 0 14px 0 8px;
+    color: #f38ba8;
+}
+
+#custom-power:hover {
+    color: #cdd6f4;
+}
+
 /* ── Right modules ── */
 #pulseaudio,
 #memory,
-#cpu,
 #clock {
     padding: 0 12px;
 }
@@ -76,10 +86,6 @@ window#waybar {
 
 #memory {
     color: #cba6f7;
-}
-
-#cpu {
-    color: #fab387;
 }
 
 #clock {

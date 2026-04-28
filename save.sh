@@ -27,6 +27,8 @@ save "$HOME/.config/gamemode.ini"           "$DOTFILES/.config/gamemode.ini"
 save "$HOME/.config/waybar/config.jsonc"    "$DOTFILES/.config/waybar/config.jsonc"
 save "$HOME/.config/waybar/style.css"       "$DOTFILES/.config/waybar/style.css"
 save "$HOME/.config/fastfetch/config.jsonc" "$DOTFILES/.config/fastfetch/config.jsonc"
+save "$HOME/.config/hypr/hypridle.conf"     "$DOTFILES/.config/hypr/hypridle.conf"
+save "$HOME/.config/waybar/power-menu.sh"   "$DOTFILES/.config/waybar/power-menu.sh"
 
 # Курсоры
 [ -d "$HOME/.icons" ]

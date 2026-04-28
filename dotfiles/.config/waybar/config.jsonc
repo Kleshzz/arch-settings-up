@@ -8,19 +8,20 @@
     "spacing": 0,
 
     "modules-left": [
-        "hyprland/workspaces",
-        "hyprland/window"
+        "hyprland/workspaces"
     ],
 
     "modules-center": [
-        "custom/media"
+        "custom/prev",
+        "custom/media",
+        "custom/next"
     ],
 
     "modules-right": [
         "pulseaudio",
         "memory",
-        "cpu",
-        "clock"
+        "clock",
+        "custom/power"
     ],
 
     "hyprland/workspaces": {
@@ -32,23 +33,24 @@
         }
     },
 
-    "hyprland/window": {
-        "max-length": 35,
-        "separate-outputs": true,
-        "rewrite": {
-            "(.+) — Mozilla Firefox": " $1",
-            "(.+) - Visual Studio Code": " $1",
-            "(.*)kitty(.*)": " Terminal",
-            "": ""
-        }
+    "custom/prev": {
+        "format": "{}",
+        "exec": "playerctl status 2>/dev/null | grep -q 'Playing\\|Paused' && echo '󰒮' || echo ''",
+        "interval": 2,
+        "on-click": "playerctl previous",
+        "tooltip": false
+    },
+
+    "custom/next": {
+        "format": "{}",
+        "exec": "playerctl status 2>/dev/null | grep -q 'Playing\\|Paused' && echo '󰒭' || echo ''",
+        "interval": 2,
+        "on-click": "playerctl next",
+        "tooltip": false
     },
 
     "custom/media": {
-        "format": "{icon}  {text}",
-        "format-icons": {
-            "Playing": "",
-            "Paused": ""
-        },
+        "format": "{text}",
         "return-type": "json",
         "max-length": 45,
         "exec": "playerctl -a metadata --format '{\"text\": \"{{artist}} — {{title}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F 2>/dev/null",
@@ -58,6 +60,12 @@
         "escape": true
     },
 
+    "custom/power": {
+        "format": "⏻",
+        "on-click": "bash /home/kleshzz/.config/waybar/power-menu.sh",
+        "tooltip": false
+    },
+
     "pulseaudio": {
         "format": "{icon} {volume}%",
         "format-muted": "󰝟",
@@ -65,8 +73,8 @@
             "default": ["󰕿", "󰖀", "󰕾"]
         },
         "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
-        "on-scroll-up": "wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+",
-        "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-",
+        "on-scroll-up": "wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 1%+",
+        "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-",
         "tooltip": false
     },
 
@@ -76,17 +84,9 @@
         "interval": 5
     },
 
-    "cpu": {
-        "format": " {usage}%",
-        "tooltip": false,
-        "interval": 3
-    },
-
     "clock": {
-        "format": "{:%H:%M:%S}",
-        "format-alt": "{:%d.%m.%Y}",
+        "format": "{:%H:%M  %d.%m.%Y}",
         "tooltip": false,
-        "on-click": "mode",
         "interval": 1
     }
 }

@@ -1,3 +1,5 @@
 * text=auto eol=lf
 
+.gitattributes export-ignore
+wallpapers/ export-ignore
 .icons/macOS/cursors/ export-ignore

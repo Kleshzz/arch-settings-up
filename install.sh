@@ -36,8 +36,11 @@ install_file "$DOTFILES/.config/gamemode.ini"           "$HOME/.config/gamemode.
 install_file "$DOTFILES/.config/waybar/config.jsonc"    "$HOME/.config/waybar/config.jsonc"
 install_file "$DOTFILES/.config/waybar/style.css"       "$HOME/.config/waybar/style.css"
 install_file "$DOTFILES/.config/fastfetch/config.jsonc" "$HOME/.config/fastfetch/config.jsonc"
+install_file "$DOTFILES/.config/hypr/hypridle.conf"     "$HOME/.config/hypr/hypridle.conf"
+install_file "$DOTFILES/.config/waybar/power-menu.sh"   "$HOME/.config/waybar/power-menu.sh"
 
 chmod +x "$HOME/.config/dunst/dunst-sound.sh"
+chmod +x "$HOME/.config/waybar/power-menu.sh"
 
 # Курсоры
 if [ -d "$DOTFILES/.icons" ]; then
