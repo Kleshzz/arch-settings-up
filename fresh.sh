@@ -2,10 +2,10 @@
 set -e
 
 if command -v yay &>/dev/null; then
-    yay -Syu --noconfirm --removemake --combinedupgrade --batchinstall
+    yay -Syu --noconfirm --removemake --combinedupgrade --batchinstall || true
     yay -Sc --noconfirm 2>/dev/null || true
 elif command -v paru &>/dev/null; then
-    paru -Syu --noconfirm --removemake --combinedupgrade --batchinstall
+    paru -Syu --noconfirm --removemake --combinedupgrade --batchinstall || true
     paru -Sc --noconfirm 2>/dev/null || true
 else
     sudo pacman -Syu --noconfirm
