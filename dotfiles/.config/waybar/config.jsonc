@@ -61,8 +61,8 @@
     },
 
     "custom/power": {
-        "format": "⏻",
-        "on-click": "bash /home/kleshzz/.config/waybar/power-menu.sh",
+        "format": "󰐥",
+        "on-click": "bash ~/.config/waybar/power-menu.sh",
         "tooltip": false
     },
 

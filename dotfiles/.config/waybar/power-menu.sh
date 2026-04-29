@@ -1,6 +1,6 @@
 #!/bin/bash
 
-choice=$(printf "󰐥 Turn off\n󰜉 Reboot\n󰒲 Sleep" | rofi \
+choice=$(printf "󰐥 Turn off\n󰑐 Reboot\n Sleep" | rofi \
     -dmenu \
     -p "" \
     -no-show-match \
@@ -10,6 +10,6 @@ choice=$(printf "󰐥 Turn off\n󰜉 Reboot\n󰒲 Sleep" | rofi \
 
 case "$choice" in
     "󰐥 Turn off") systemctl poweroff ;;
-    "󰜉 Reboot") systemctl reboot ;;
-    "󰒲 Sleep") hyprlock ;;
+    "󰑐 Reboot") systemctl reboot ;;
+    " Sleep") hyprlock ;;
 esac
