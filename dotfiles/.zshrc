@@ -72,3 +72,5 @@ alias CLEAR='clear'
 # Powerlevel10k
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 eval "$(zoxide init zsh)"
+
+fastfetch
