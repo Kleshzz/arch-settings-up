@@ -4,3 +4,9 @@ gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 
 dota2:
 gamemoderun %command% -novid -noassert -nojoy -nosteamcontroller -vulkan -language russian -high -freq 144 -input_button_code_is_scan_code
+
+dns:
+sudo nmcli connection modify "Wired connection 1" ipv4.dns "111.88.96.50, 111.88.96.51, 192.168.1.1"
+sudo nmcli connection modify "Wired connection 1" ipv4.ignore-auto-dns yes
+sudo nmcli connection modify "Wired connection 1" ipv4.dns-options "timeout:1,attempts:1"
+sudo nmcli connection up "Wired connection 1"
