@@ -2,6 +2,10 @@
 
 ---
 
+```bash
+git clone --depth=1 https://github.com/kleshzz/Arch-Set-UP.git
+```
+
 ## Установка
 
 ```bash
