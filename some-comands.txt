@@ -10,3 +10,6 @@ sudo nmcli connection modify "Wired connection 1" ipv4.dns "111.88.96.50, 111.88
 sudo nmcli connection modify "Wired connection 1" ipv4.ignore-auto-dns yes
 sudo nmcli connection modify "Wired connection 1" ipv4.dns-options "timeout:1,attempts:1"
 sudo nmcli connection up "Wired connection 1"
+
+/etc/default/grub
+GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 quiet nvidia-drm.modeset=1"
