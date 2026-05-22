@@ -9,6 +9,9 @@ fi
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+
 # Плагины
 plugins=(
   git
@@ -72,4 +75,9 @@ alias CLEAR='clear'
 
 # Powerlevel10k
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-eval "$(zoxide init zsh)"
+eval "$(zoxide init zsh)"export PATH="$HOME/.npm-global/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+
+# bun completions
+[ -s "/home/kleshzz/.bun/_bun" ] && source "/home/kleshzz/.bun/_bun"
