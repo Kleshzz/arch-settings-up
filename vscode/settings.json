@@ -2,7 +2,7 @@
     // Appearance & Font
     "editor.fontFamily": "JetBrainsMono Nerd Font Mono",
     "editor.fontWeight": "500",
-    "editor.fontLigatures": true,
+    "editor.fontLigatures": false,
     "editor.fontSize": 14,
     "workbench.colorTheme": "Catppuccin Mocha",
 
