@@ -2,6 +2,11 @@
 user_pref("network.trr.uri", "https://xbox-dns.ru/dns-query");
 user_pref("network.trr.mode", 2);
 
+// Network
+user_pref("network.prefetch-next", false);
+user_pref("network.http.max-persistent-connections-per-server", 10);
+user_pref("network.dns.disablePrefetch", true);
+
 // Interface
 user_pref("browser.aboutConfig.showWarning", false);
 user_pref("browser.newtabpage.activity-stream.showSponsored", false);
@@ -58,6 +63,11 @@ user_pref("media.hardware-video-decoding.force-enabled", true);
 user_pref("media.gpu-process-decoder", true);
 user_pref("layers.gpu-process.enabled", true);
 user_pref("layers.gpu-process.force-enabled", true);
+
+// Annoying
+user_pref("browser.uitour.enabled", false); // туториалы
+user_pref("browser.tabs.warnOnClose", false);
+user_pref("browser.warnOnQuit", true);
 
 // Pocket
 user_pref("extensions.pocket.enabled", false);
