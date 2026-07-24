@@ -5,9 +5,16 @@ user_pref("network.trr.mode", 2);
 // Network
 user_pref("network.prefetch-next", false);
 user_pref("network.http.max-persistent-connections-per-server", 10);
+user_pref("network.http.speculative-parallel-limit", 0);
+user_pref("browser.places.speculativeConnect.enabled", false);
+user_pref("network.predictor.enabled", false);
 user_pref("network.dns.disablePrefetch", true);
+user_pref("network.http.http3.enable", true); // i think this is default setting now
+user_pref("network.dns.http3_echconfig.enabled", true); // i think this is default setting now
+user_pref("network.http.referer.XOriginTrimmingPolicy", 2);
+user_pref("security.csp.reporting.enabled", false);
 
-// Interface
+// Interface & Annoying
 user_pref("browser.aboutConfig.showWarning", false);
 user_pref("browser.newtabpage.activity-stream.showSponsored", false);
 user_pref("browser.newtabpage.activity-stream.showSponsoredTopSites", false);
@@ -19,6 +26,13 @@ user_pref("browser.newtabpage.activity-stream.feeds.section.topstories", false);
 user_pref("browser.newtabpage.activity-stream.showSponsoredCheckboxes", false); // FF140+
 user_pref("browser.urlbar.trending.featureGate", false); // remove trending queries from the address bar.
 user_pref("browser.urlbar.suggest.engines", false); // remove search engine switch prompts
+user_pref("browser.uitour.enabled", false); // remove tutorials
+user_pref("browser.tabs.warnOnClose", false);
+user_pref("browser.warnOnQuit", true);
+user_pref("browser.urlbar.suggest.quicksuggest.nonsponsored", false); // i think this is default setting now
+user_pref("browser.urlbar.suggest.quicksuggest.sponsored", false); // i think this is default setting now
+user_pref("media.autoplay.default", 5);
+user_pref("browser.download.open_pdf_attachments_inline", true);
 
 // AI
 user_pref("browser.ml.chat.enabled", false);
@@ -55,6 +69,14 @@ user_pref("security.ssl.errorReporting.automatic", false);
 user_pref("toolkit.crashreporter.infoURL", "");
 user_pref("dom.battery.enabled", false);
 user_pref("privacy.globalprivacycontrol.enabled", true); // modern "Do Not Track" standard
+user_pref("geo.enabled", false);
+user_pref("device.sensors.enabled", false);
+user_pref("privacy.fingerprintingProtection", true);
+user_pref("app.shield.optoutstudies.enabled", false);
+user_pref("app.normandy.enabled", false);
+user_pref("app.normandy.api_url", "");
+user_pref("toolkit.coverage.opt-out", true);
+user_pref("toolkit.coverage.endpoint.base", "");
 
 // Graphics
 user_pref("gfx.webrender.all", true);
@@ -63,11 +85,7 @@ user_pref("media.hardware-video-decoding.force-enabled", true);
 user_pref("media.gpu-process-decoder", true);
 user_pref("layers.gpu-process.enabled", true);
 user_pref("layers.gpu-process.force-enabled", true);
-
-// Annoying
-user_pref("browser.uitour.enabled", false); // remove tutorials
-user_pref("browser.tabs.warnOnClose", false);
-user_pref("browser.warnOnQuit", true);
+user_pref("gfx.canvas.accelerated.cache-size", 512);
 
 // Pocket
 user_pref("extensions.pocket.enabled", false);
@@ -86,6 +104,10 @@ user_pref("gfx.content.skia-font-cache-size", 32);
 user_pref("browser.cache.memory.capacity", 262144); // 256 MB of RAM for the cache
 user_pref("browser.cache.memory.max_entry_size", 51200); // max 50MB per element
 user_pref("browser.sessionhistory.max_total_viewers", 3); // number of back/forward pages to remember
+user_pref("dom.webgpu.enabled", true);
+user_pref("javascript.options.concurrent_multiprocess_gcs.cpu_divisor", 2);
+user_pref("dom.ipc.pageUnloadWindowCloseTimeout", 0);
+user_pref("javascript.options.baselinejit.threshold", 50);
 
 // Scrolling
 user_pref("apz.overscroll.enabled", true); // "bounce" effect when scrolling to the edge of the page
