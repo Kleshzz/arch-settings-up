@@ -42,7 +42,7 @@ install_file "$DOTFILES/.config/waybar/power-menu.sh"   "$HOME/.config/waybar/po
 chmod +x "$HOME/.config/dunst/dunst-sound.sh"
 chmod +x "$HOME/.config/waybar/power-menu.sh"
 
-# Курсоры
+# Cursors
 if [ -d "$DOTFILES/.icons" ]; then
     cp -rp "$DOTFILES/.icons" "$HOME/.icons"
     echo "Done .icons"
@@ -50,7 +50,7 @@ else
     echo "Skip .icons (not found in dotfiles)"
 fi
 
-# Zsh плагины
+# Zsh plugins
 ZSH_CUSTOM="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}"
 
 if [ ! -d "$ZSH_CUSTOM/plugins/zsh-autosuggestions" ]; then
@@ -71,7 +71,7 @@ else
     echo "Skip zsh-syntax-highlighting (already installed)"
 fi
 
-# Пакеты
+# Packets
 if ! command -v zoxide &>/dev/null; then
     sudo pacman -S --needed --noconfirm zoxide
     echo "Done zoxide"
@@ -95,10 +95,10 @@ fi
 
 mkdir -p "$HOME/Pictures/Screenshots"
 
-# Зависимости для fresh
+# Dependencies for fresh
 sudo pacman -S --needed --noconfirm pacman-contrib
 
-# Установка fresh
+# Installing fresh
 sudo cp "$REPO/fresh.sh" /usr/local/bin/fresh
 sudo chmod +x /usr/local/bin/fresh
 
@@ -111,7 +111,7 @@ sudo grep -qF "$sudoers_line" "$sudoers_file" 2>/dev/null || {
     sudo chmod 440 "$sudoers_file"
 }
 
-# Алиас в .zshrc
+# Alias in .zshrc
 grep -q "alias fresh=" "$HOME/.zshrc" 2>/dev/null || \
     echo "alias fresh='/usr/local/bin/fresh'" >> "$HOME/.zshrc"
 

@@ -6,7 +6,7 @@
 git clone --depth=1 https://github.com/kleshzz/Arch-Set-UP.git
 ```
 
-## Установка
+## Installation
 
 ```bash
 chmod +x install.sh && ./install.sh
@@ -14,15 +14,15 @@ chmod +x install.sh && ./install.sh
 
 ---
 
-## Команды
+## Commands
 
-### `fresh` — полное обновление системы
+### `fresh` full system update & fresh
 
 ```bash
 fresh
 ```
 
-### `save.sh` — сохранить конфиги в репозиторий
+### `save.sh` save configs to repo
 
 ```bash
 ./save.sh

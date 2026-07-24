@@ -12,13 +12,13 @@ user_pref("browser.aboutConfig.showWarning", false);
 user_pref("browser.newtabpage.activity-stream.showSponsored", false);
 user_pref("browser.newtabpage.activity-stream.showSponsoredTopSites", false);
 user_pref("browser.discovery.enabled", false);
-user_pref("browser.startup.homepage_override.mstone", "ignore"); // убирает "что нового" после обновлений
-user_pref("browser.preferences.moreFromMozilla", false); // убирает "Больше от Mozilla" в настройках
-user_pref("browser.shell.checkDefaultBrowser", false); // не спрашивать про дефолтный браузер
-user_pref("browser.newtabpage.activity-stream.feeds.section.topstories", false); // рекомендации Pocket
+user_pref("browser.startup.homepage_override.mstone", "ignore"); // remove "What's New" after updates
+user_pref("browser.preferences.moreFromMozilla", false); // remove "More from Mozilla" from settings.
+user_pref("browser.shell.checkDefaultBrowser", false); // do not ask about the default browser
+user_pref("browser.newtabpage.activity-stream.feeds.section.topstories", false); // Pocket recommendations
 user_pref("browser.newtabpage.activity-stream.showSponsoredCheckboxes", false); // FF140+
-user_pref("browser.urlbar.trending.featureGate", false); // убрать трендовые запросы в адресной строке
-user_pref("browser.urlbar.suggest.engines", false); // убрать подсказки смены поисковика
+user_pref("browser.urlbar.trending.featureGate", false); // remove trending queries from the address bar.
+user_pref("browser.urlbar.suggest.engines", false); // remove search engine switch prompts
 
 // AI
 user_pref("browser.ml.chat.enabled", false);
@@ -54,7 +54,7 @@ user_pref("breakpad.reportURL", "");
 user_pref("security.ssl.errorReporting.automatic", false);
 user_pref("toolkit.crashreporter.infoURL", "");
 user_pref("dom.battery.enabled", false);
-user_pref("privacy.globalprivacycontrol.enabled", true); // современный стандарт "не отслеживать"
+user_pref("privacy.globalprivacycontrol.enabled", true); // modern "Do Not Track" standard
 
 // Graphics
 user_pref("gfx.webrender.all", true);
@@ -65,7 +65,7 @@ user_pref("layers.gpu-process.enabled", true);
 user_pref("layers.gpu-process.force-enabled", true);
 
 // Annoying
-user_pref("browser.uitour.enabled", false); // туториалы
+user_pref("browser.uitour.enabled", false); // remove tutorials
 user_pref("browser.tabs.warnOnClose", false);
 user_pref("browser.warnOnQuit", true);
 
@@ -82,24 +82,24 @@ user_pref("full-screen-api.warning.timeout", 0);
 
 // Fast work
 user_pref("gfx.content.skia-font-cache-size", 32);
-// user_pref("dom.ipc.processCount", 8); // firefox сам выбирает оптимал
-user_pref("browser.cache.memory.capacity", 262144); // 256MB под кеш в RAM
-user_pref("browser.cache.memory.max_entry_size", 51200); // макс 50MB на элемент
-user_pref("browser.sessionhistory.max_total_viewers", 3); // кол-во запоминаний страниц назад - вперед
+// user_pref("dom.ipc.processCount", 8); // Firefox itself chooses the optimal
+user_pref("browser.cache.memory.capacity", 262144); // 256 MB of RAM for the cache
+user_pref("browser.cache.memory.max_entry_size", 51200); // max 50MB per element
+user_pref("browser.sessionhistory.max_total_viewers", 3); // number of back/forward pages to remember
 
 // Scrolling
-user_pref("apz.overscroll.enabled", true); // эффект "отскока" при прокрутке до края страницы
-user_pref("general.smoothScroll", true); // включить плавную прокрутку
-user_pref("general.smoothScroll.msdPhysics.continuousMotionMaxDeltaMS", 12); // макс. интервал между тиками для "непрерывного" скролла — чем меньше, тем отзывчивее
-user_pref("general.smoothScroll.msdPhysics.enabled", true); // физическая модель скролла (пружина/инерция) вместо линейной
-user_pref("general.smoothScroll.msdPhysics.motionBeginSpringConstant", 600); // жёсткость пружины в начале движения — выше = резче старт
-user_pref("general.smoothScroll.msdPhysics.regularSpringConstant", 650); // жёсткость пружины во время движения — выше = меньше инерции
-user_pref("general.smoothScroll.msdPhysics.slowdownMinDeltaMS", 25); // минимальный интервал для фазы торможения
-user_pref("general.smoothScroll.msdPhysics.slowdownMinDeltaRatio", "2"); // порог перехода в фазу торможения
-user_pref("general.smoothScroll.msdPhysics.slowdownSpringConstant", 250); // жёсткость пружины при торможении — ниже = плавнее остановка
-user_pref("general.smoothScroll.currentVelocityWeighting", "1"); // вес текущей скорости при новом импульсе — 1 = скорости складываются (накапливается инерция)
-user_pref("general.smoothScroll.stopDecelerationWeighting", "1"); // насколько резко гасится скорость при остановке — 1 = естественное затухание
-user_pref("mousewheel.default.delta_multiplier_y", 300); // множитель шага колёсика по вертикали — выше = быстрее скроллишь
+user_pref("apz.overscroll.enabled", true); // "bounce" effect when scrolling to the edge of the page
+user_pref("general.smoothScroll", true); // enable smooth scrolling
+user_pref("general.smoothScroll.msdPhysics.continuousMotionMaxDeltaMS", 12); // max. interval between ticks for "continuous" scrolling, the lower, the more responsive
+user_pref("general.smoothScroll.msdPhysics.enabled", true); // physical scroll model (spring/inertia) instead of linear
+user_pref("general.smoothScroll.msdPhysics.motionBeginSpringConstant", 600); // spring stiffness at the start of movement, higher = sharper start
+user_pref("general.smoothScroll.msdPhysics.regularSpringConstant", 650); // spring stiffness during movement, higher = less inertia
+user_pref("general.smoothScroll.msdPhysics.slowdownMinDeltaMS", 25); // minimum interval for the braking phase
+user_pref("general.smoothScroll.msdPhysics.slowdownMinDeltaRatio", "2"); // threshold for transition to the inhibition phase
+user_pref("general.smoothScroll.msdPhysics.slowdownSpringConstant", 250); // spring stiffness during braking, lower = smoother stop
+user_pref("general.smoothScroll.currentVelocityWeighting", "1"); // weight of current velocity upon a new impulse, 1 = velocities add up (inertia accumulates)
+user_pref("general.smoothScroll.stopDecelerationWeighting", "1"); // how abruptly speed drops when stopping, 1 = natural deceleration
+user_pref("mousewheel.default.delta_multiplier_y", 300); // vertical scroll wheel step multiplier, higher = faster scrolling
 
 // Mini things
-user_pref("findbar.highlightAll", true); // подсвечивать все совпадения при поиске по странице
+user_pref("findbar.highlightAll", true); // highlight all matches when searching the page

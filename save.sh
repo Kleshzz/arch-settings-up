@@ -30,7 +30,7 @@ save "$HOME/.config/fastfetch/config.jsonc" "$DOTFILES/.config/fastfetch/config.
 save "$HOME/.config/hypr/hypridle.conf"     "$DOTFILES/.config/hypr/hypridle.conf"
 save "$HOME/.config/waybar/power-menu.sh"   "$DOTFILES/.config/waybar/power-menu.sh"
 
-# Курсоры
+# Cursors
 [ -d "$HOME/.icons" ]
 cp -rp "$HOME/.icons" "$DOTFILES/.icons"
 echo "Done .icons"
