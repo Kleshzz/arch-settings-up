@@ -56,6 +56,7 @@ alias la='ls -a'
 alias grep='grep --color=auto'
 alias ..='cd ..'
 alias vim='nvim'
+alias apktool='bash ~/Modding/apktool/wrapper'
 
 # Опечатки и тд
 alias fresh='/usr/local/bin/fresh'
@@ -73,11 +74,13 @@ alias clera='clear'
 alias cleara='clear'
 alias CLEAR='clear'
 
+# Для кодинга
+alias update-zig="$HOME/Files/update-zig.sh"
+alias upd-zig="$HOME/Files/update-zig.sh"
+alias zig="$HOME/Files/zig-compiler/zig"
+
 # Powerlevel10k
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 eval "$(zoxide init zsh)"export PATH="$HOME/.npm-global/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
-
-# bun completions
-[ -s "/home/kleshzz/.bun/_bun" ] && source "/home/kleshzz/.bun/_bun"

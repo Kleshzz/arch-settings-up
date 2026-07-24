@@ -3,7 +3,13 @@ gsettings set org.gnome.desktop.interface color-scheme 'default'
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 
 dota2:
-gamemoderun %command% -novid -noassert -nojoy -nosteamcontroller -vulkan -language russian -high -freq 144 -input_button_code_is_scan_code
+gamemoderun %command% -novid -nojoy -nohltv -map dota +map dota +exec sets.cfg -freq 144 -language russian -dota_embers 0 -input_button_code_is_scan_code
+
+geometry dash:
+WINEDLLOVERRIDES="xinput1_4=n,b" %command% -w1920 -h1080
+
+it takes two:
+gamemoderun PROTON_ENABLE_NVAPI=1 __GL_SHADER_DISK_CACHE_SKIP_CLEANUP=1 %command%
 
 dns:
 sudo nmcli connection modify "Wired connection 1" ipv4.dns "111.88.96.50, 111.88.96.51, 192.168.1.1"
